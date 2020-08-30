@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Cloud Service Portal</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/@clr/icons/clr-icons.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/@clr/ui/clr-ui.min.css') }}">
+    </head>    
+    <body>
+        <div class="main-container">
+            <header class="header header-1">
+                <div class="branding">
+                    <a href="..." class="nav-link">
+                        <clr-icon shape="vm-bug"></clr-icon>
+                        <span class="title">Citi Service Portal</span>
+                    </a>
+                </div>
+                <div class="header-nav">
+                    <a href="..." class="nav-link nav-icon">
+                        <clr-icon shape="cloud"></clr-icon>
+                    </a>
+                    <a href="..." class="active nav-link nav-icon">
+                        <clr-icon shape="folder"></clr-icon>
+                    </a>
+                </div>
+                <form class="search">
+                    <label for="search_input">
+                        <input id="search_input" type="text" placeholder="Search for keywords...">
+                    </label>
+                </form>
+                <div class="header-actions">
+                    <clr-dropdown>
+                        <button class="nav-icon" clrDropdownTrigger>
+                            <clr-icon shape="user"></clr-icon>
+                            <clr-icon shape="caret down"></clr-icon>
+                        </button>
+                        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                            <a href="..." clrDropdownItem>About</a>
+                            <a href="..." clrDropdownItem>Preferences</a>
+                            <a href="..." clrDropdownItem>Log out</a>
+                        </clr-dropdown-menu>
+                    </clr-dropdown>
+                </div>
+            </header>
+            <nav class="subnav">
+              <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cloud</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tenants</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="content-container">
+                <div class="content-area">
+                    {% block body %}{% endblock %}
+                </div>
+              <nav class="sidenav">
+                  <section class="sidenav-content">
+                      <a href="/application" class="nav-link active">
+                          Applications
+                      </a>
+                      <a href="..." class="nav-link">
+                          Virtual Machines
+                      </a>
+                      <a href="..." class="nav-link">
+                          Load Balancers
+                      </a>
+                      <a href="..." class="nav-link">
+                          Object Storage
+                      </a>
+                      <a href="..." class="nav-link">
+                          File Storage
+                      </a>
+          
+                  </section>
+              </nav>
+            </div>
+          </div>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+          <script src="{{url_for('static', filename='css/@webcomponents/custom-elements/custom-elements.min.js')}}"></script>
+          <script src="{{url_for('static', filename='css/@clr/icons/clr-icons.min.js')}}"></script>
+    </body>
+</html>

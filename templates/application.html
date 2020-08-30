@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% if orderid %}
+    <div class="alert alert-success">
+        <div class="alert-items">
+            <div class="alert-item static">
+                <div class="alert-icon-wrapper">
+                    <clr-icon class="alert-icon" shape="check-circle"></clr-icon>
+                </div>
+                <span class="alert-text">Enjoy, service request submitted, order # <a href="{{orderid}}" target="_blank"> {{orderid}}</a></span>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<form method="post" class="navbar-form navbar-right" action="/application"> 
+    <section class="form-block">
+        <label>Request an application</label>
+        <div class="form-group">
+            <label for="aForm_3" >Region</label>
+            <div class="select">
+                <select id="region" name="region">
+                    <option>NA</option>
+                    <option>EMEA</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="aForm_3" >Service</label>
+            <div class="select">
+                <select id="service" name="service">
+                    <option>REDHAT7</option>
+                    <option>REDHAT6</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="aForm_3" >Project</label>
+            <div class="select">
+                <select id="project" name="project">
+                    <option>Black Hole</option>
+                    <option>EMEA</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Request application</button>
+    </section>
+</form>
+{% endblock %}
+
+
